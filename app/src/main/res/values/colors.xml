@@ -9,4 +9,6 @@
     <color name="theme_default_accent">#8f673ab7</color>
     <color name="theme_default_accent_light">#8f9575cd</color>
     <color name="theme_default_accent_dark">#8f512da8</color>
+
+    <color name="btn_tint">#7f101010</color>
 </resources>

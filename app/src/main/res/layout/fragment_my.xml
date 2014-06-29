@@ -8,11 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MyActivity$PlaceholderFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/my_btn"
+        style="@style/mBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/text_background"
         android:padding="@dimen/activity_horizontal_margin"
-        android:text="@string/hello_world"/>
+        android:text="@string/hello_world" />
 
 </RelativeLayout>

@@ -10,11 +10,11 @@
         <item name="android:background">?android:colorPrimaryDark</item>
         <item name="android:colorAccent">@color/theme_default_accent</item>
         <item name="android:colorControlHighlight">@color/theme_default_accent_light</item>
-        <item name="android:displayOptions">showTitle|homeAsUp</item>
+        <item name="android:displayOptions">showTitle</item>
         <item name="android:titleTextStyle">@style/MainThemeActionBarTitleTextStyle</item>
 
         <item name="android:navigationBarColor">?android:colorPrimaryDark</item>
-        <item name="android:statusBarColor">?android:colorPrimaryDark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
 
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
@@ -24,7 +24,7 @@
 
     <style name="MainActionBar" parent="android:Widget.Material.Light.ActionBar">
         <item name="android:background">?android:colorPrimaryDark</item>
-        <item name="android:displayOptions">showTitle|homeAsUp</item>
+        <item name="android:displayOptions">showTitle</item>
         <item name="android:titleTextStyle">@style/MainThemeActionBarTitleTextStyle</item>
     </style>
 
@@ -47,6 +47,12 @@
 
     <style name="MainThemeActionBarTitleTextStyle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
         <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="mBtn">
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:tint">@color/btn_tint</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
 </resources>
