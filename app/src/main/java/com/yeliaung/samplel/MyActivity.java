@@ -132,13 +132,7 @@ public class MyActivity extends Activity {
 
       viewHolder.mRefreshBtn.setOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View v) {
-          anim.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-              super.onAnimationEnd(animation);
-              viewHolder.mRefreshBtn.setVisibility(View.INVISIBLE);
-            }
-          });
+          anim.start();
         }
       });
     }
