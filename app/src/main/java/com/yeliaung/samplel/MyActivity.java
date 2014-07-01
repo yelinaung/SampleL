@@ -1,5 +1,8 @@
 package com.yeliaung.samplel;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -15,10 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
+import android.view.ViewAnimationUtils;
 
 public class MyActivity extends Activity {
 
@@ -84,10 +90,12 @@ public class MyActivity extends Activity {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
       public TextView mTextView;
+      public ImageView mRefreshBtn;
 
       public ViewHolder(View v) {
         super(v);
         mTextView = (TextView) v.findViewById(R.id.txt);
+        mRefreshBtn = (ImageButton) v.findViewById(R.id.ref);
       }
     }
 
@@ -98,11 +106,39 @@ public class MyActivity extends Activity {
       return new ViewHolder(v);
     }
 
-    @Override public void onBindViewHolder(MyAdapter.ViewHolder viewHolder, final int i) {
+    @Override public void onBindViewHolder(final MyAdapter.ViewHolder viewHolder, final int i) {
       viewHolder.mTextView.setText(mData[i]);
       viewHolder.mTextView.setOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View v) {
           Log.i("tag", "clicked " + mData[i]);
+        }
+      });
+
+      // previously visible view
+      viewHolder.mRefreshBtn.setVisibility(View.VISIBLE);
+
+      // get the center for the clipping circle
+      int cx = (viewHolder.mRefreshBtn.getLeft() + viewHolder.mRefreshBtn.getRight()) / 2;
+      int cy = (viewHolder.mRefreshBtn.getTop() + viewHolder.mRefreshBtn.getBottom()) / 2;
+
+      // get the initial radius for the clipping circle
+      int initialRadius = viewHolder.mRefreshBtn.getWidth();
+
+      // create the animation (the final radius is zero)
+      final ValueAnimator anim =
+          ViewAnimationUtils.createCircularReveal(viewHolder.mRefreshBtn, cx, cy, 0, initialRadius);
+
+      // start the animation
+
+      viewHolder.mRefreshBtn.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View v) {
+          anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+              super.onAnimationEnd(animation);
+              viewHolder.mRefreshBtn.setVisibility(View.INVISIBLE);
+            }
+          });
         }
       });
     }
