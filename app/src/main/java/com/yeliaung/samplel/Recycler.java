@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import android.view.ViewAnimationUtils;
 
-public class MyActivity extends Activity {
+public class Recycler extends Activity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
