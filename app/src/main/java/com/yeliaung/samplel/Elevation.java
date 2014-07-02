@@ -1,35 +1,33 @@
 package com.yeliaung.samplel;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Outline;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class Home extends Activity {
+public class Elevation extends Activity {
+
+  private Outline mOutlineCircle;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_home);
-    Button recycleView = (Button) findViewById(R.id.recycler_view_btn);
+    setContentView(R.layout.activity_elevation);
 
-    recycleView.setOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
-        Intent i = new Intent();
-        i.setClass(Home.this, Recycler.class);
-        startActivity(i);
-      }
-    });
+    final ImageButton imageButton = (ImageButton) findViewById(R.id.elevation_btn);
 
-    Button elevationBtn = (Button) findViewById(R.id.elevation_view_btn);
-    elevationBtn.setOnClickListener(new View.OnClickListener() {
+    int shapeSize = getResources().getDimensionPixelSize(R.dimen.shape_size);
+    mOutlineCircle = new Outline();
+    mOutlineCircle.setRoundRect(0, 0, shapeSize, shapeSize, shapeSize / 2);
+
+    imageButton.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        Intent i = new Intent();
-        i.setClass(Home.this, Elevation.class);
-        startActivity(i);
+        Toast.makeText(Elevation.this, "I am clicked", Toast.LENGTH_SHORT).show();
+        imageButton.setElevation(64);
       }
     });
   }
@@ -37,7 +35,7 @@ public class Home extends Activity {
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.home, menu);
+    getMenuInflater().inflate(R.menu.elevation, menu);
     return true;
   }
 

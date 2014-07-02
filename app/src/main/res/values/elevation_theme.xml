@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="ElevationTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <item name="android:colorPrimary">#673ab7</item>
+    <item name="android:colorPrimaryDark">#512da8</item>
+  </style>
+</resources>

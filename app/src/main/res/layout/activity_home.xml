@@ -15,4 +15,11 @@
       android:layout_width="match_parent"
       android:layout_height="50dp"/>
 
+  <Button
+      android:id="@+id/elevation_view_btn"
+      android:text="@string/title_activity_elevation"
+      android:layout_below="@id/recycler_view_btn"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"/>
+
 </RelativeLayout>
