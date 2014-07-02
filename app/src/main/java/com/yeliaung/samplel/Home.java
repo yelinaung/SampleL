@@ -14,9 +14,8 @@ public class Home extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
-    Button recycleView = (Button) findViewById(R.id.recycler_view_btn);
 
-    recycleView.setOnClickListener(new View.OnClickListener() {
+    findViewById(R.id.recycler_view_btn).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         Intent i = new Intent();
         i.setClass(Home.this, Recycler.class);
@@ -24,11 +23,18 @@ public class Home extends Activity {
       }
     });
 
-    Button elevationBtn = (Button) findViewById(R.id.elevation_view_btn);
-    elevationBtn.setOnClickListener(new View.OnClickListener() {
+    findViewById(R.id.elevation_view_btn).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         Intent i = new Intent();
         i.setClass(Home.this, Elevation.class);
+        startActivity(i);
+      }
+    });
+
+    findViewById(R.id.prominent_btn).setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        Intent i = new Intent();
+        i.setClass(Home.this, ProminentColor.class);
         startActivity(i);
       }
     });

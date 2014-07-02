@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity">
+
+  <ImageView
+      android:id="@+id/sample"
+      android:src="@drawable/gdg"
+      android:padding="10dp"
+      android:contentDescription="@string/sample"
+      android:layout_width="300dp"
+      android:layout_height="300dp"
+      android:layout_centerHorizontal="true"/>
+
+  <Button
+      android:id="@+id/get_color_btn"
+      android:text="@string/get_color"
+      android:layout_below="@id/sample"
+      android:layout_centerHorizontal="true"
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"/>
+
+  <View
+      android:id="@+id/result_view"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="10dp"
+      android:layout_width="150dp"
+      android:layout_height="50dp"
+      android:layout_below="@+id/get_color_btn"/>
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="ProminentTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <item name="android:colorPrimary">#259b24</item>
+    <item name="android:colorPrimaryDark">#0d5302</item>
+  </style>
+</resources>

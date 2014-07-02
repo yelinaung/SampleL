@@ -22,4 +22,11 @@
       android:layout_width="match_parent"
       android:layout_height="50dp"/>
 
+  <Button
+      android:id="@+id/prominent_btn"
+      android:text="@string/title_activity_prominent"
+      android:layout_below="@id/elevation_view_btn"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"/>
+
 </RelativeLayout>
